@@ -91,8 +91,9 @@ const SFX = {
 new p5 (p => {
   p.setup = function () {
     const wrap = document.getElementById ('canvasWrap');
-    const w = Math.max (600, wrap.clientWidth);
-    const h = Math.max (360, wrap.clientHeight);
+    // larger default canvas for a game-like feel on desktop
+    const w = Math.max (1100, wrap.clientWidth);
+    const h = Math.max (700, wrap.clientHeight);
     cnv = p.createCanvas (w, h);
     cnv.parent ('canvasWrap');
 
@@ -141,10 +142,10 @@ new p5 (p => {
 
   p.windowResized = function () {
     const wrap = document.getElementById ('canvasWrap');
-    p.resizeCanvas (
-      Math.max (560, wrap.clientWidth),
-      Math.max (320, wrap.clientHeight)
-    );
+    // keep responsive but with larger minimums
+    const newW = Math.max (900, wrap.clientWidth);
+    const newH = Math.max (560, wrap.clientHeight);
+    p.resizeCanvas (newW, newH);
   };
 
   p.draw = function () {

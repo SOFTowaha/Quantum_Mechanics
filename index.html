@@ -24,6 +24,8 @@
 		<nav aria-label="Primary">
 			<button id="shuffleBtn" class="btn">Shuffle</button>
 			<button id="resetBtn" class="btn outline">Reset</button>
+			<a href="how_to_play.html" class="btn outline" id="howToLink">How to play</a>
+			<button id="openInstr" class="btn" aria-haspopup="dialog">Instructions</button>
 		</nav>
 	</header>
 
@@ -46,6 +48,22 @@
 			<p>Click or tap a particle to see its properties.</p>
 		</aside>
 	</main>
+
+	<!-- In-page instructions modal -->
+	<div id="instrModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="modal-content" role="document">
+			<button class="modal-close" id="closeInstr">×</button>
+			<h3>How to play</h3>
+			<ul>
+				<li>Click or tap particles to collect them and earn points.</li>
+				<li>Rare particles are worth more points — watch for special badges.</li>
+				<li>Use arrow keys to nudge particles. Hold Shift for a bigger nudge.</li>
+				<li>Press 'r' to reset positions. Use Shuffle to randomize the field.</li>
+				<li>Reach score milestones to level up.</li>
+			</ul>
+			<p>For more details and tips, open the full <a href="how_to_play.html">How to play</a> page.</p>
+		</div>
+	</div>
 
 	<footer class="footer">
 		<small>Made with ✨ physics and code — lightweight, accessible, and animated.</small>

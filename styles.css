@@ -38,10 +38,10 @@ body{
 nav{display:flex;gap:10px}
 .btn{background:var(--accent);color:#04202a;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
 .btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent)}
-.container{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:28px;flex:1;width:100%;max-width:1200px;margin:0 auto}
-.hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;min-height:420px;display:flex;flex-direction:column}
+.container{display:grid;grid-template-columns:1fr 340px;gap:28px;padding:28px;flex:1;width:100%;max-width:1400px;margin:0 auto}
+.hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;min-height:760px;display:flex;flex-direction:column}
 .hero h2{margin:0 0 8px 0}
-.canvas-wrap{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:360px}
+.canvas-wrap{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:720px}
 /* Canvas styling placeholder - p5 will inject canvas here */
 .canvas-wrap canvas{border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)}
 .info{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
