@@ -14,6 +14,50 @@ const PARTICLES = [
     description: 'A lightweight lepton that orbits the nucleus.',
   },
   {
+    id: 'positron',
+    name: 'Positron',
+    type: 'Lepton',
+    rarity: 'uncommon',
+    charge: '+1',
+    mass: '9.11×10⁻³¹ kg',
+    color: '#ff9b7a',
+    points: 30,
+    description: "The electron's antimatter counterpart; worth a bonus.",
+  },
+  {
+    id: 'muon',
+    name: 'Muon',
+    type: 'Lepton',
+    rarity: 'uncommon',
+    charge: '-1',
+    mass: '105.7 MeV/c²',
+    color: '#f0a6ff',
+    points: 40,
+    description: 'Heavier cousin of the electron. Appears occasionally.',
+  },
+  {
+    id: 'tau',
+    name: 'Tau',
+    type: 'Lepton',
+    rarity: 'rare',
+    charge: '-1',
+    mass: '1776.86 MeV/c²',
+    color: '#d082ff',
+    points: 120,
+    description: 'Very heavy lepton — rare and high-value.',
+  },
+  {
+    id: 'neutrino',
+    name: 'Neutrino',
+    type: 'Lepton',
+    rarity: 'rare',
+    charge: '0',
+    mass: '~0.1 eV/c²',
+    color: '#9be7ff',
+    points: 150,
+    description: 'Extremely light and elusive — huge bonus.',
+  },
+  {
     id: 'up',
     name: 'Up Quark',
     type: 'Quark',
@@ -56,6 +100,39 @@ const PARTICLES = [
     color: '#b56576',
     points: 90,
     description: 'Carrier of the strong force — very rare in this demo.',
+  },
+  {
+    id: 'w_boson',
+    name: 'W Boson',
+    type: 'Boson',
+    rarity: 'very-rare',
+    charge: '+/-1',
+    mass: '80.4 GeV/c²',
+    color: '#ffdf7a',
+    points: 200,
+    description: 'Massive force carrier; very rare and valuable.',
+  },
+  {
+    id: 'z_boson',
+    name: 'Z Boson',
+    type: 'Boson',
+    rarity: 'very-rare',
+    charge: '0',
+    mass: '91.2 GeV/c²',
+    color: '#c4a0ff',
+    points: 220,
+    description: 'Neutral weak force carrier — huge points.',
+  },
+  {
+    id: 'higgs',
+    name: 'Higgs',
+    type: 'Boson',
+    rarity: 'legendary',
+    charge: '0',
+    mass: '125 GeV/c²',
+    color: '#ffd6e0',
+    points: 500,
+    description: 'Extremely rare — collecting the Higgs gives a massive bonus.',
   },
 ];
 
@@ -253,6 +330,26 @@ document.addEventListener ('DOMContentLoaded', () => {
   const resetBtn = document.getElementById ('resetBtn');
   const scoreEl = document.getElementById ('score');
   const levelEl = document.getElementById ('level');
+
+  // Instruction modal handlers
+  const openInstr = document.getElementById ('openInstr');
+  const instrModal = document.getElementById ('instrModal');
+  const closeInstr = document.getElementById ('closeInstr');
+  if (openInstr && instrModal) {
+    openInstr.addEventListener ('click', () => {
+      instrModal.setAttribute ('aria-hidden', 'false');
+    });
+  }
+  if (closeInstr && instrModal) {
+    closeInstr.addEventListener ('click', () => {
+      instrModal.setAttribute ('aria-hidden', 'true');
+    });
+  }
+  // close modal with Esc
+  window.addEventListener ('keydown', ev => {
+    if (ev.key === 'Escape' && instrModal)
+      instrModal.setAttribute ('aria-hidden', 'true');
+  });
 
   shuffleBtn.addEventListener ('click', () => {
     // randomize positions with a joyful animation

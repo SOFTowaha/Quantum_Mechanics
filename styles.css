@@ -66,6 +66,23 @@ nav{display:flex;gap:10px}
 /* colorful particle label */
 .particle-tag{position:absolute;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04202a;font-weight:700;font-size:12px;box-shadow:0 6px 18px rgba(125,211,252,0.06)}
 
+/* Modal / instructions */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(1,6,12,0.6);opacity:0;pointer-events:none;transition:opacity 220ms ease}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-content{background:linear-gradient(180deg, #071018, #09202a);padding:20px;border-radius:12px;max-width:720px;color:#e6eef6;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(2,6,23,0.7)}
+.modal-close{position:absolute;right:18px;top:14px;background:transparent;border:0;color:#9aa6b2;font-size:22px;cursor:pointer}
+.modal-content h3{margin-top:0}
+
+/* Atom explorer specific */
+.explorer-wrap{display:flex;gap:22px;align-items:flex-start;justify-content:center;width:100%}
+.explorer-wrap svg{flex:1;max-width:820px;border-radius:10px}
+.explorer-wrap .info{align-self:flex-start}
+
+.legend{padding-top:8px;border-top:1px solid rgba(255,255,255,0.03)}
+.legend-item{display:flex;align-items:center;gap:10px;padding:6px 0}
+.legend .swatch{width:18px;height:18px;border-radius:4px;box-shadow:0 4px 12px rgba(2,6,23,0.5);border:1px solid rgba(255,255,255,0.03)}
+.legend .label{font-size:13px;color:#d7e6f2}
+
 /* Responsive */
 @media (max-width:960px){
   .container{grid-template-columns:1fr;padding:18px}
